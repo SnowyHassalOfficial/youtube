@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(to bottom, #2c3e50, #34495e);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            overflow: hidden;
+        }
+
+        .login-box {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            width: 350px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .login-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .login-box h2 {
+            margin-bottom: 30px;
+            color: #333;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .login-box input[type="text"],
+        .login-box input[type="password"] {
+            width: calc(100% - 22px);
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        .login-box input[type="text"]:focus,
+        .login-box input[type="password"]:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+
+        .login-box button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-box button:hover {
+            background-color: #45a049;
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.3);
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 100;
+            font-size: 1.2em;
+        }
+
+        .bg-circles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Place the circles behind the login box */
+        }
+
+        .bg-circles div {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: animate 25s linear infinite;
+        }
+
+        .bg-circles div:nth-child(1) {
+            top: 15%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .bg-circles div:nth-child(2) {
+            top: 80%;
+            left: 50%;
+            animation-delay: 4s;
+        }
+
+        .bg-circles div:nth-child(3) {
+            top: 40%;
+            left: 20%;
+            animation-delay: 8s;
+        }
+
+        .bg-circles div:nth-child(4) {
+            top: 60%;
+            left: 80%;
+            animation-delay: 12s;
+        }
+
+        .bg-circles div:nth-child(5) {
+            top: 10%;
+            left: 90%;
+            animation-delay: 16s;
+        }
+
+        .bg-circles div:nth-child(6) {
+            top: 70%;
+            left: 0%;
+            animation-delay: 20s;
+        }
+
+        @keyframes animate {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-1000px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>Login To Use</header>
+
+    <div class="bg-circles">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <div class="login-box">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="login()">Login</button>
+    </div>
+
+    <script>
+        function login() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            if (username === "SnowyHassal" && password === "snowyhassal") {
+                window.location.href = "https://www.youtube.com/";
+            } else {
+                alert("Incorrect username or password.");
+            }
+        }
+    </script>
+</body>
+</html>
